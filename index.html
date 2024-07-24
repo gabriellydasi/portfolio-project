@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="script.js"></script>
+</head>
+<body class="container">
+    <header class="header">
+        <nav class="header__menu"> <!-- semantic tag that helps navigate the sites -->
+            <a class="header__menu__link" href="index.html">Home</a>
+            <a class="header__menu__link" href="about.html">About Me</a>
+            <div>
+                <input type="checkbox" class="checkbox" id="chk">
+                <label class="label" for="chk">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <main class="presentation"> <!-- Parent element-->
+        <section class="presentation__content"> <!-- Child element-->
+            <h1 class="presentation__content__title">Take your digital business to the next level <strong class="highlight-title">with quality Back-end!</strong></h1>
+            <p class="presentation__content__text">Hello! I'm Gabrielly Silva, a Back-end developer specialized in Java, Spring Boot, and MySQL. I help small businesses and development teams create and maintain robust and scalable systems. Shall we talk?</p>
+            <div class="presentation__links"> <!-- for grouping specific elements -->
+                <h2 class="presentation__links__subtitle">Access my social medias:</h2>
+                <a class="presentation__links__navigation" href="https://www.linkedin.com/in/gabriellydasi/">
+                    <img src="./assets/linkedin.png">
+                    LinkedIn
+                </a>
+                <a class="presentation__links__navigation" href="https://github.com/gabriellydasi">
+                    <img src="./assets/github.png">
+                    GitHub
+                </a>
+            </div>
+        </section>
+        <img class="presentation__image" src="./assets/developer.png" alt="Photo of Gabrielly Silva">
+    </main>
+    <footer class="footer">
+        <p>Developed by</p>
+        <img src="./assets/icons8-github .svg" class="footer__image" alt="GitHub icon">
+        <a class="footer__github" href="https://github.com/gabriellydasi">
+            <b class="footer__github__nick">/gabriellydasi</b>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script> <!-- icons sun and moon -->
+</body>
+</html>
