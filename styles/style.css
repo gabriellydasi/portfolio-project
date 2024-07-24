@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root { /* pseudo class */
+    --primary-color: #000000; /* defines the global variable name */
+    --secondary-color: #F6F6F6;
+    --tertiary-color: #22D4FD;
+    --hover-color: #1e1e1e;
+
+    --primary-font: 'Krona One', sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* the containers bellow allow the footer to stay fixed on the site */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container main {
+    flex: 1 1 0;
+}
+
+
+
+body {
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    /* transition: background 0.5s linear; */
+}
+
+body.dark {
+    background-color: var(--primary-color);
+    .presentation__links__navigation:hover {
+        background-color: var(--hover-color);
+    }
+
+    .label {
+        background-color: var(--hover-color);
+    }
+}
+
+body.light {
+    background-color: #465361;
+    .presentation__links__navigation:hover {
+        background-color: #627386;
+    }
+
+    .label { 
+        background-color: #3e4955;;
+    }
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #151515;
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.01s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(30px);
+}
+
+.fa-moon {
+    color: #737373;
+}
+
+.fa-sun {
+    color: #f3be4c;
+}
+
+.header {
+    padding: 2% 0% 0% 15%;
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link {
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--tertiary-color);
+    text-decoration: none;
+
+    transition: all 0.5s;
+}
+
+.header__menu__link:hover {
+    font-size: 1.625rem;
+}
+
+.presentation {
+    padding: 5% 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 82px; /* space between children (image and text) */
+}
+
+.presentation__content { /* content defined in figma design */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* spacing between each child element */
+}
+
+.presentation__content__title {
+    font-size: 2.25rem; /* 36px/16 = 2.25 rem 1 rem = 16px */ 
+    font-family: var(--primary-font);
+    text-align: justify;
+}
+
+.highlight-title {
+    color: var(--tertiary-color);
+}
+
+.presentation__content__text {
+    font-size: 1.5rem;
+    font-family: var(--secondary-font);
+    text-align: justify;
+}
+
+.presentation__links {
+    display: flex; /* flexbox structure */
+    flex-direction: column;
+    justify-content: space-between; /* flexbox structure */
+    align-items: center;
+    gap: 32px; /* defining spacing between objects */
+}
+
+.presentation__links__subtitle {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.presentation__links__navigation {
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center; /* aligning elements */
+    gap: 16px;
+    width: 50%;
+    border: 2px solid var(--tertiary-color);
+    border-radius: 8px;
+    padding: 21.5px 0px; /* first value is vertical and the second is horizontal */
+
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    font-weight: 600;
+
+    transition: all 0.5s;
+}
+
+.presentation__links__navigation:hover {
+    background-color: var(--hover-color);
+    padding: 3%; /* creates a mini animation on the buttons */
+}
+
+.presentation__image {
+    width: 50%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--secondary-font);
+    font-size: 1.25rem;
+    font-weight: 400;
+    gap: 5px;
+}
+
+.footer__github {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.footer__image {
+    width: 2rem; 
+}
+
+.footer__github__nick {
+    transition: all 0.5s;
+}
+
+.footer__github__nick:hover {
+    font-size: 1.375rem;
+}
+
+@media(max-width: 1200px) { /* defines how elements will be displayed on the site based on dimensions */
+    .header {
+        padding: 10%;
+    }
+    .header__menu {
+        justify-content: center;
+    }
+    .presentation {
+        flex-direction: column-reverse; /* reverses the order of elements */
+        padding: 5%;
+        align-items: center;
+    }
+    .presentation__content {
+        width: auto;
+    }
+} 
